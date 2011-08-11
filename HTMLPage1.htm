@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <!-- use google's version of jquery.js instead of a local copy -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#Text1").val( parseFloat(window.external.Callback1(25)) + 15 );
+      });
+
+      function clickFirstButton(str) {
+        $("#Text1").val(str);
+        window.external.Callback2("show", str);
+      }
+
+      function setText(str) {
+        $("#Text1").val(str);
+      }    
+    </script>                                                               
+</head>
+
+<body>
+  <p>
+    <input id="Button1" type="button" value="button" onclick="clickFirstButton('hi');" /><input id="Text1" 
+      type="text" /></p>
+</body>
+</html>
